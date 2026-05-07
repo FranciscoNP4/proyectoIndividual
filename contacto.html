@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Software Corp.</title>
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-logo">
+      <img src="img/logo.png.png" alt="Logo Academic Software Corp.">
+      <span>Academic Software Corp.</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="plan_estudios.html">Plan de Estudios</a></li>
+        <li><a href="egresados.html">Egresados</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+    <a href="contacto.html" class="nav-cta">Inscríbete</a>
+  </header>
+
+  <main>
+
+    <section id="contacto-header">
+      <div class="breadcrumb">Inicio › Contacto</div>
+      <h1>Contacto · Admisiones</h1>
+      <p>Resuelve tus dudas y da el primer paso hacia tu carrera</p>
+    </section>
+
+    <!-- Formulario + Info -->
+    <div id="contacto-grid">
+
+      <!-- Columna formulario -->
+      <section id="form-col">
+        <h2>Envíanos un mensaje</h2>
+
+        <form id="contacto-form" novalidate>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono (opcional)</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+52 (000) 000-0000" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="motivo">Motivo de contacto</label>
+            <select id="motivo" name="motivo">
+              <option value="" disabled selected>Selecciona una opción...</option>
+              <option value="admisiones">Información sobre admisiones</option>
+              <option value="plan">Dudas sobre el plan de estudios</option>
+              <option value="costos">Costos y financiamiento</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu pregunta o comentario aquí..."></textarea>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="privacidad" name="privacidad">
+            <label for="privacidad">Acepto el aviso de privacidad y el tratamiento de mis datos</label>
+          </div>
+
+          <button type="submit" class="submit-btn">Enviar mensaje</button>
+          <p class="privacy-note">Tus datos están protegidos. No se compartirán con terceros.</p>
+
+        </form>
+      </section>
+
+      <!-- Columna información -->
+      <aside id="info-col">
+        <h2>Información de contacto</h2>
+
+        <div class="mapa-placeholder" aria-label="Mapa del campus">
+          📍
+          <span>Academic Software Corp. · Ensenada, B.C.</span>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon" style="background:#EBF3FB;">✉️</div>
+          <div>
+            <div class="info-title">Correo electrónico</div>
+            <div class="info-val" style="color:#4A9EE8;">admisiones@unieje.edu.mx</div>
+            <div class="info-val">ingenieria@unieje.edu.mx</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon" style="background:#E1F5EE;">📞</div>
+          <div>
+            <div class="info-title">Teléfono</div>
+            <div class="info-val">+52 (646) 292 4536 </div>
+            <div class="info-val">Ext. 201 · Admisiones</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon" style="background:#FAEEDA;">📌</div>
+          <div>
+            <div class="info-title">Dirección</div>
+            <div class="info-val"> Calle Tercera 1761, Ensenada</div>
+            <div class="info-val">Baja California, México · C.P. 22830</div>
+          </div>
+        </div>
+
+        <div style="font-size:14px;font-weight:600;color:var(--texto);margin:14px 0 10px;">Horario de atención</div>
+        <div class="horario-grid">
+          <div class="horario-item">
+            <div class="horario-dia">Lun — Vie</div>
+            <div class="horario-hora">9:00 — 18:00 hrs</div>
+          </div>
+          <div class="horario-item">
+            <div class="horario-dia">Sábados</div>
+            <div class="horario-hora">9:00 — 13:00 hrs</div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- ===== SECCIÓN: LISTA DE ALUMNOS (COMPONENTE INTEGRADO) ===== -->
+    <section id="lista-alumnos-section">
+      <h2>Area de Interes </h2>
+      <p class="section-sub">Registro de alumnos  · Sin duplicados</p>
+
+      <div class="alumnos-widget">
+        <div class="agregar">
+
+          <input type="text" id="alumnoInput" placeholder="Nombre del alumno...">
+
+          <select id="areaInput">
+            <option value="">Área de interés</option>
+            <option value="UX/UI">UX/UI</option>
+            <option value="Base de datos">Base de datos</option>
+            <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+            <option value="Ciberseguridad">Ciberseguridad</option>
+            <option value="Backend">Backend</option>
+          </select>
+
+          <input type="text" id="habilidadesInput" placeholder="Habilidades (ej. Java, diseño...)">
+
+          <button class="btn-agregar" onclick="agregarAlumno()">+ Añadir</button>
+        </div>
+
+        <p class="error-msg" id="errorMsg"></p>
+
+        <div class="alumnos-contador" id="contadorAlumnos">0 alumnos registrados</div>
+
+        <div id="contenedorAlumnos" class="listaEtiquetas">
+          <span class="empty-state">Aún no hay alumnos registrados.</span>
+        </div>
+      </div>
+    </section>
+    <!-- ===== FIN LISTA DE ALUMNOS ===== -->
+
+    <!-- Proceso de admisión -->
+    <section id="admision">
+      <h2>Proceso de admisión · 4 pasos</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-label">Solicitud en línea</div>
+          <div class="step-sub">Llena el formulario</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-label">Entrega de documentos</div>
+          <div class="step-sub">Certificado y CURP</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-label">Examen de admisión</div>
+          <div class="step-sub">Aptitud y razonamiento</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-label">Inscripción oficial</div>
+          <div class="step-sub">Bienvenido a la carrera</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <p>© 2026 Academic Software Corp. · Ingeniería de Software</p>
+    <p>Privacidad · Aviso legal · <a href="contacto.html">Contacto</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
