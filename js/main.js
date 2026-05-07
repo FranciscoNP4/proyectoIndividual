@@ -111,3 +111,4 @@ function actualizarInterfaz() {
   });
 
 }
+//////==========USO DE GEOLOCALIZACION DE CANVAS Y USO DOM  ====
