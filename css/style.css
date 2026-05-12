@@ -1204,6 +1204,15 @@ a {
 USO DE GEOLOCALIZACION DE CANVAS Y USO DOM 
 ============================================ */
 
+#canvasBebe {
+  border: 2px solid rosybrown;
+  background-color: #b0bec5;
+}
+
+#results {
+  margin-top: 15px;
+  font-size: 20px;
+}
 
 /* ============================================
    RESPONSIVE - TABLET (≤ 1024px)
@@ -1289,7 +1298,7 @@ USO DE GEOLOCALIZACION DE CANVAS Y USO DOM
   }
 }
 /* ============================================
-   RESPONSIVE - MOBIL 
+   RESPONSIVE - MOBILE 
    ============================================ */
 @media (max-width: 768px) {
 

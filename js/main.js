@@ -112,3 +112,75 @@ function actualizarInterfaz() {
 
 }
 //////==========USO DE GEOLOCALIZACION DE CANVAS Y USO DOM  ====
+// Obtenemos los elementos a través del DOM
+const canvas = document.getElementById("canvasBebe");
+const context = canvas.getContext("2d");
+const button = document.getElementById("locateMeBtn");
+const resultado = document.getElementById("results");
+
+// Coordenadas de la Universidad de Zaragoza, ESHPAÑA
+const uniLatitud = 41.6836; const uniLongitud = -0.8891;
+
+button.addEventListener("click", getLocation);
+
+function getLocation() {
+  if (navigator.geolocation) { // If the browser's compatible with geolocation yay!
+    navigator.geolocation.getCurrentPosition(
+      showPosition, showError
+    );
+  } else { // Whoops, I guess not
+    resultado.innerHTML = "Tu browser no soporta geolocalización sorry!";
+  }
+}
+
+function showPosition(position) {
+  // User coordinates
+  const userLatitud = position.coords.latitude;
+  const userLongitud = position.coords.longitude;
+  // Show 'em
+  console.log("Latitud: ", userLatitud);
+  console.log("Longitud: ", userLongitud);
+  // Calculate distance
+  const distance = calcDistance(
+    userLatitud, userLongitud, uniLatitud, uniLongitud
+  );
+  // Show results
+  resultado.innerHTML = `<p><strong>Tu ubicación:</strong> </p>
+    <p> Latitud: ${userLatitud.toFixed(4)} \n ${userLongitud.toFixed(4)}</p>
+    <p> Estás a <strong>${distance.toFixed(2)}</strong> km de la Universidad de Zaragoza.</p>`;
+  drawMap(distance);  // Show map
+}
+
+function showError(error) {
+  resultado.innerHTML = "Ocurrió un error :c";
+}
+
+function calcDistance(latUser, longUser, latUni, longUni) {
+  const R = 6371; // Earth's radius in kilometers
+
+  const distLat = degreesToRadians(latUni - latUser);
+  const distLong = degreesToRadians(longUni - longUser);
+
+  const a = Math.sin(distLat / 2) * Math.sin(distLat / 2) + 
+  Math.cos(degreesToRadians(latUser) * Math.cos(degreesToRadians(latUni)) *
+  Math.sin(distLong / 2) * Math.sin(distLong / 2));
+
+  const b = 2 * Math.atan2(
+    Math.sqrt(a),
+    Math.sqrt(1-a)
+  );
+  return R * b;
+}
+
+function degreesToRadians(degrees) { return degrees * (Math.PI / 180); }
+
+function drawMap(distance) {
+  // Clean up, clean up, everybpdy clean up!
+  context.clearRect(0, 0, canvas.clientWidth, canvas.height);
+
+  context.fillStyle = "#dfe6e9";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+
+  context.beginPath();
+  context.arc(100, );
+}
