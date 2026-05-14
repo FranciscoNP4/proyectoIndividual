@@ -1213,6 +1213,22 @@ USO DE GEOLOCALIZACION DE CANVAS Y USO DOM
   margin-top: 15px;
   font-size: 20px;
 }
+canvas {
+  width: 80%;
+  max-width: 500px;
+}
+
+#ubi {
+  max-width: 900px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+#ubi h2 {
+  font-size: 1.4rem;
+  color: #1A3A5C;
+  margin-bottom: 6px;
+}
 
 /* ============================================
    RESPONSIVE - TABLET (≤ 1024px)

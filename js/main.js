@@ -112,6 +112,7 @@ function actualizarInterfaz() {
 
 }
 //////==========USO DE GEOLOCALIZACION DE CANVAS Y USO DOM  ====
+//// ==> POR YULIETTE Y FRANK
 // Obtenemos los elementos a través del DOM
 const canvas = document.getElementById("canvasBebe");
 const context = canvas.getContext("2d");
@@ -161,9 +162,9 @@ function calcDistance(latUser, longUser, latUni, longUni) {
   const distLat = degreesToRadians(latUni - latUser);
   const distLong = degreesToRadians(longUni - longUser);
 
-  const a = Math.sin(distLat / 2) * Math.sin(distLat / 2) + 
-  Math.cos(degreesToRadians(latUser) * Math.cos(degreesToRadians(latUni)) *
-  Math.sin(distLong / 2) * Math.sin(distLong / 2));
+  const a =
+  Math.sin(distLat / 2) * Math.sin(distLat / 2) + Math.cos(degreesToRadians(latUser)) *
+  Math.cos(degreesToRadians(latUni)) * Math.sin(distLong / 2) * Math.sin(distLong / 2);
 
   const b = 2 * Math.atan2(
     Math.sqrt(a),
@@ -176,11 +177,42 @@ function degreesToRadians(degrees) { return degrees * (Math.PI / 180); }
 
 function drawMap(distance) {
   // Clean up, clean up, everybpdy clean up!
-  context.clearRect(0, 0, canvas.clientWidth, canvas.height);
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
+  // Background ambience iykyk
   context.fillStyle = "#dfe6e9";
   context.fillRect(0, 0, canvas.width, canvas.height);
 
+  // User omg
   context.beginPath();
-  context.arc(100, );
+  context.arc(100, 150, 20, 0, Math.PI * 2);
+  context.fillStyle = "pink";
+  context.fill();
+
+  // University of Zaragoza
+  context.beginPath();
+  context.arc(400, 150, 20, 0, Math.PI * 2);
+  context.fillStyle = "lightblue";
+  context.fill();
+
+  // the connection aka line between the two
+  context.beginPath();
+  context.moveTo(100, 150);
+  context.lineTo(400, 150);
+  context.strokeStyle = "purple";
+  context.lineWidth = 3;
+  context.stroke();
+
+  // Can we just talk?
+  context.font = "18px Libre Baskerville";
+  context.fillStyle = "black";
+
+  context.fillText(
+    `Distancia: ${distance.toFixed(2)} km`,
+    150,
+    100
+  );
+
+  context.fillText("Tú", 90, 190);
+  context.fillText("Campus", 370, 190);
 }
